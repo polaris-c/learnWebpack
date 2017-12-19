@@ -60,25 +60,53 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-const msg = __webpack_require__(1).msg;
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({	
+	msg: 'Hello World!',
 
-console.log('msg:',msg);
-console.log('* * *');
+	open: true,
+
+	click: function() {
+		alert('Good Luck!');
+		console.log('Good Luck!');
+		return 'Good!';
+	},
+
+	// foo: 1,
+
+	// count: setInterval(() => this.foo++, 100)
+
+	// export { open, msg, foo, click };
+});
+
+
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports) {
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-const msg = 'Hello World!';
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base__ = __webpack_require__(0);
 
-module.exports = {msg: msg};
+
+if(__WEBPACK_IMPORTED_MODULE_0__base__["a" /* default */].open) {
+	document.body.innerHTML = `<h1>Welcome</h1>`;
+}
+else {
+	document.body.innerHTML = `<h1>STOP</h1>`
+}
+
 
 /***/ })
 /******/ ]);

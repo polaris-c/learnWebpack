@@ -60,25 +60,89 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-const msg = __webpack_require__(1).msg;
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({	
+	msg: 'Hello World!',
 
-console.log('msg:',msg);
-console.log('* * *');
+	open: true,
+
+	click: function() {
+		alert('Good Luck!');
+		console.log('Good Luck!');
+		return 'Good!';
+	},
+
+	// foo: 1,
+
+	// count: setInterval(() => this.foo++, 100)
+
+	// export { open, msg, foo, click };
+});
+
+
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-const msg = 'Hello World!';
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__time__ = __webpack_require__(3);
 
-module.exports = {msg: msg};
+// import base from './base';
+
+
+if(__WEBPACK_IMPORTED_MODULE_0__index__["a" /* base */].open) {
+	document.getElementById('show').innerHTML = `
+		<a href = "signup.html"><h3>注册</h3></a>
+	`
+}
+else {
+	document.body.innerHTML = `<a href = "signup.html">Not Open</a>`
+}
+
+function myFunction() {
+	let reVal = __WEBPACK_IMPORTED_MODULE_0__index__["a" /* base */].click();
+	console.log('reVal:', reVal);
+	return ;
+}
+
+console.log('msg:', __WEBPACK_IMPORTED_MODULE_0__index__["a" /* base */].msg);
+console.log('click:', __WEBPACK_IMPORTED_MODULE_0__index__["a" /* base */].click);
+console.log('myFunction:', myFunction);
+console.log('* * *');
+
+setInterval(() => console.log('- - -', __WEBPACK_IMPORTED_MODULE_1__time__["a" /* count */]), 800);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_js__ = __webpack_require__(0);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__base_js__["a"]; });
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return count; });
+let count = 1;
+
+setInterval(() => count++, 100)
+
+
 
 /***/ })
 /******/ ]);
