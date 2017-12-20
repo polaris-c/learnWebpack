@@ -12,7 +12,15 @@
 </head>
 <body>
 	<div id = "show"></div>
-	<button class = "btn btn-default" onclick="click()">GOOD</button>
+	<button id = "changeOpenButton" class = "btn btn-default">change open</button>
+	<hr>
+	<button onclick="originClick()" class = "btn btn-default">OriginClick</button>
+	<button id = "myFunctionButton" class = "btn btn-default">ObjClick</button>
+	<button id = "BaseObjClickButton" onclick="base.objClick()">Base.ObjClick</button>	
+	<button id = "ExpClickButton" class = "btn btn-default">ExpClick</button>
+	<button id = "innerFunctionButton" class = "btn btn-default">Inner</button>
+
 	<script type="text/javascript" src="../dist/home.bundle.js"></script>
+	<script type="text/javascript" src="../js/origin-func.js"></script>
 </body>
 </html>

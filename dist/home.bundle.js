@@ -73,17 +73,10 @@
 
 	open: true,
 
-	click: function() {
-		alert('Good Luck!');
-		console.log('Good Luck!');
-		return 'Good!';
-	},
-
-	// foo: 1,
-
-	// count: setInterval(() => this.foo++, 100)
-
-	// export { open, msg, foo, click };
+	objClick: function() {
+		console.log('Obj.clickFunction');
+		return 'Obj.clickFunction';
+	}
 });
 
 
@@ -94,46 +87,65 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__time__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__time_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__exp_func_js__ = __webpack_require__(3);
+// import { base } from './index';
 
-// import base from './base';
 
 
-if(__WEBPACK_IMPORTED_MODULE_0__index__["a" /* base */].open) {
+
+if(__WEBPACK_IMPORTED_MODULE_0__base_js__["a" /* default */].open) {
 	document.getElementById('show').innerHTML = `
 		<a href = "signup.html"><h3>注册</h3></a>
 	`
 }
 else {
-	document.body.innerHTML = `<a href = "signup.html">Not Open</a>`
+	document.getElementById('show').innerHTML = `<a href = "signup.html">Not Open</a>`
 }
 
 function myFunction() {
-	let reVal = __WEBPACK_IMPORTED_MODULE_0__index__["a" /* base */].click();
-	console.log('reVal:', reVal);
+	let objClickVal = __WEBPACK_IMPORTED_MODULE_0__base_js__["a" /* default */].objClick();
+	console.log('objClickVal:', objClickVal);
 	return ;
 }
 
-console.log('msg:', __WEBPACK_IMPORTED_MODULE_0__index__["a" /* base */].msg);
-console.log('click:', __WEBPACK_IMPORTED_MODULE_0__index__["a" /* base */].click);
-console.log('myFunction:', myFunction);
+const innerFunction = function() {
+    console.log('Welcome!!!');
+}
+
+function changeOpen() {
+	__WEBPACK_IMPORTED_MODULE_0__base_js__["a" /* default */].open = !__WEBPACK_IMPORTED_MODULE_0__base_js__["a" /* default */].open;
+	console.log('changeOpen!!!');
+	console.log('* * *');
+	return ;
+}
+document.getElementById('changeOpenButton').addEventListener("click", changeOpen);
+
+document.getElementById('myFunctionButton').addEventListener("click", myFunction);
+document.getElementById('ExpClickButton').addEventListener("click", __WEBPACK_IMPORTED_MODULE_2__exp_func_js__["a" /* expClick */]);
+document.getElementById('innerFunctionButton').addEventListener("click", innerFunction);
+
+
+console.log('base.msg:', __WEBPACK_IMPORTED_MODULE_0__base_js__["a" /* default */].msg);
+console.log('base.open:', __WEBPACK_IMPORTED_MODULE_0__base_js__["a" /* default */].open);
+console.log('base.objClick:', __WEBPACK_IMPORTED_MODULE_0__base_js__["a" /* default */].objClick);
 console.log('* * *');
 
-setInterval(() => console.log('- - -', __WEBPACK_IMPORTED_MODULE_1__time__["a" /* count */]), 800);
+console.log('expFunc:', __WEBPACK_IMPORTED_MODULE_2__exp_func_js__["b" /* expFunc */]);
+console.log('expClick:', __WEBPACK_IMPORTED_MODULE_2__exp_func_js__["a" /* expClick */]);
+console.log('* * *');
 
+console.log('myFunction:', myFunction);
+console.log('innerFunction:', innerFunction);
+console.log('* * *');
+
+setInterval(() => console.log('- - -', __WEBPACK_IMPORTED_MODULE_1__time_js__["a" /* count */]), 9000);
+
+// JS 中的事件绑定、事件监听与事件委托: http://blog.csdn.net/zghekuiwu/article/details/53783424
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_js__ = __webpack_require__(0);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__base_js__["a"]; });
-
-
-/***/ }),
-/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -141,6 +153,22 @@ setInterval(() => console.log('- - -', __WEBPACK_IMPORTED_MODULE_1__time__["a" /
 let count = 1;
 
 setInterval(() => count++, 100)
+
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return expClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return expFunc; });
+function expClick() {
+	console.log('Exp.clickFunction');
+	return ;
+}
+
+const expFunc = 'exp-func is OK!';
 
 
 
